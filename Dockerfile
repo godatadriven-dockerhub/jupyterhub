@@ -18,8 +18,8 @@ RUN conda install -y pyzmq==16.0.2 nb_conda jupyter jupyterhub findspark -c cond
     tar xzf "spark-${SPARK_VERSION}-bin-hadoop2.7.tgz" && \
     rm "spark-${SPARK_VERSION}-bin-hadoop2.7.tgz" && \
     mv "spark-${SPARK_VERSION}-bin-hadoop2.7" /usr/spark && \
-    apt-get remote wget && \
-    apt-get clean && \
+    apt-get remove -y wget && \
+    apt-get clean
 
 EXPOSE 8000
 ENTRYPOINT ["jupyterhub"]
