@@ -10,7 +10,7 @@ RUN conda install -y pyzmq==16.0.2 nb_conda jupyter jupyterhub jupyter_client fi
   	python -m nb_conda_kernels.install --enable --prefix=/opt/miniconda3 && \
     conda clean -tipsy && \
   	apt-get update && \
-	apt-get install -y openjdk-8-jre && \
+	apt-get install -y openjdk-8-jre git && \
     apt-get clean && \
     export SPARK_HOME=$(python /opt/miniconda3/bin/find_spark_home.py)
 
