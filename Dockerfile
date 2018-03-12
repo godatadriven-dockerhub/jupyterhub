@@ -6,7 +6,7 @@ ARG SPARK_VERSION=2.2.1
 LABEL org.label-schema.name="JupyterHub" \
       org.label-schema.build-date=$BUILD_DATE
       
-RUN conda install -y pyzmq==16.0.2 nb_conda jupyterhub jupyter_client findspark -c conda-forge && \
+RUN conda install -y nb_conda jupyterhub jupyter_client findspark -c conda-forge && \
   	python -m nb_conda_kernels.install --enable --prefix=/opt/miniconda3 && \
   	pip install --no-cache pyspark==${SPARK_VERSION} && \
     conda clean -tipsy && \
