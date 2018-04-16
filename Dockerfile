@@ -2,6 +2,7 @@ ARG SPARK_VERSION=2.3.0
 FROM godatadriven/pyspark:${SPARK_VERSION}
 
 ARG BUILD_DATE
+ARG SPARK_VERSION
 
 LABEL org.label-schema.name="JupyterHub + PySpark $SPARK_VERSION" \
       org.label-schema.build-date=$BUILD_DATE
