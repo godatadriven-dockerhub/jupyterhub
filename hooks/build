@@ -5,12 +5,12 @@ IMAGE_REPO=${IMAGE_NAME%:*}
 IMAGE_TAG=${IMAGE_NAME#*:}
 
 if [ $IMAGE_TAG = "nospark" ]; then
-    DOCKER_FILE=Dockerfile_NoSpark
+    DOCKER_FILE="Dockerfile_NoSpark"
 else
-    DOCKER_FILE=Dockerfile
+    DOCKER_FILE="Dockerfile"
 fi
 
 # Trigger build
 docker build --build-arg BUILD_DATE=`date -u +"%Y-%m-%dT%H:%M:%SZ"` \
-             -t $IMAGE_NAME 
-             -f $DOCKER_FILE .
+             -f $DOCKER_FILE \
+             -t $IMAGE_NAME .
