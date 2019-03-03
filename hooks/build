@@ -4,6 +4,8 @@
 IMAGE_REPO=${IMAGE_NAME%:*}
 IMAGE_TAG=${IMAGE_NAME#*:}
 
+JH_VERSION=${IMAGE_TAG%-*}
+
 if [ $IMAGE_TAG = "nospark" ]; then
     DOCKER_FILE="Dockerfile_NoSpark"
 else
@@ -12,5 +14,6 @@ fi
 
 # Trigger build
 docker build --build-arg BUILD_DATE=`date -u +"%Y-%m-%dT%H:%M:%SZ"` \
+             --build-arg JH_VERSION=$JH_VERSION \
              -f $DOCKER_FILE \
-             -t $IMAGE_NAME .
+             -t $DOCKER_REPO:${DOCKER_TAG//,/ -t $DOCKER_REPO:} .
