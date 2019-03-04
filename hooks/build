@@ -5,8 +5,9 @@ IMAGE_REPO=${IMAGE_NAME%:*}
 IMAGE_TAG=${IMAGE_NAME#*:}
 
 JH_VERSION=${IMAGE_TAG%-*}
+SPARK_VERSION=${IMAGE_TAG#*-}
 
-if [ $IMAGE_TAG = "nospark" ]; then
+if [ $SPARK_VERSION = "nospark" ]; then
     DOCKER_FILE="Dockerfile_NoSpark"
 else
     DOCKER_FILE="Dockerfile"
