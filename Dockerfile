@@ -16,7 +16,7 @@ RUN set -x && \
     python -m nb_conda_kernels.install --enable --prefix=/opt/miniconda3 && \
     conda clean -tipsy && \
     apt-get update && \
-    apt-get install -y openjdk-8-jre git build-essential nano vim less procps apt-transport-https ca-certificates --no-install-recommends && \
+    apt-get install -y git build-essential nano vim less procps apt-transport-https ca-certificates --no-install-recommends && \
     apt-get clean
 
 EXPOSE 8000
