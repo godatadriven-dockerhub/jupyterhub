@@ -22,7 +22,7 @@ jobs:
     strategy:
       matrix:
         # Specify which tags to build
-        DOCKER_TAG: ["1.3.0-spark,latest", "1.3.0-nospark", "1.2.0-spark", "1.2.0-nospark", "1.1.0-spark", "1.1.0-nospark"]
+        DOCKER_TAG: ["1.3.0-spark,latest", "1.3.0-nospark", "1.2.2-spark", "1.2.2-nospark", "1.1.0-spark", "1.1.0-nospark"]
 
     timeout-minutes: 30
     steps:
